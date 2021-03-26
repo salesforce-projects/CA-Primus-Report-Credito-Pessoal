@@ -1,0 +1,91 @@
+{
+  "key": "42e3bf51-dc3c-4b98-9588-a55e47a78dde",
+  "workflowApiVersion": "1.1",
+  "metaData": {
+    "icon": "images/logoPrimus.jpg",
+    "iconSmall": "images/logoPrimus.jpg",
+    "category": "message"
+  },
+  "type": "REST",
+  "lang": {
+    "en-US": {
+      "name": "Report Simulador Real Time CA",
+      "description": "Cada vez que uma pessoa recebe o link do simulador atraves de uma journey, é enviada um update para o sistema interno do primus."
+    }
+  },
+  "arguments": {
+    "execute": {
+      "inArguments": [],
+      "outArguments": [],
+      "url": "https://ca-report-simulador.herokuapp.com/journeybuilder/execute",
+      "verb": "POST",
+      "body": "",
+      "header": "",
+      "format": "json",
+      "useJwt": true,
+      "timeout": 10000
+    }
+  },
+  "configurationArguments": {
+    "applicationExtensionKey": "42e3bf51-dc3c-4b98-9588-a55e47a78dde",
+    "defaults": {
+      "activity": "0"
+    },
+    "save": {
+      "url": "https://ca-report-simulador.herokuapp.com/journeybuilder/save",
+      "verb": "POST",
+      "useJwt": true
+    },
+    "publish": {
+      "url": "https://ca-report-simulador.herokuapp.com/journeybuilder/publish",
+      "verb": "POST",
+      "useJwt": true
+    },
+    "stop": {
+      "url": "https://ca-report-simulador.herokuapp.com/journeybuilder/stop",
+      "verb": "POST",
+      "useJwt": true
+    },
+    "validate": {
+      "url": "https://ca-report-simulador.herokuapp.com/journeybuilder/validate",
+      "verb": "POST",
+      "useJwt": true
+    }
+  },
+  "wizardSteps": [
+    {
+      "label": "Configure Activity",
+      "key": "step1"
+    }
+  ],
+  "userInterfaces": {
+    "configModal": {
+      "height": 800,
+      "width": 1700,
+      "fullscreen": true
+    }
+  },
+  "schema": {
+    "arguments": {
+      "execute": {
+        "inArguments": [
+          {
+            "phoneNumber": {
+              "dataType": "Phone",
+              "isNullable": false,
+              "direction": "in"
+            }
+          },
+          {
+            "emailAddress": {
+              "dataType": "Email",
+              "isNullable": false,
+              "direction": "in"
+            }
+          }
+        ],
+        "outArguments": []
+      }
+    }
+  }
+}

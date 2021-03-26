@@ -1,0 +1,31 @@
+body {
+    padding: 20px;
+    margin: 0;
+}
+
+.step {
+    display: none;
+}
+
+#step1 {
+    display: block;
+}
+
+.modal-dialog {
+    height: 90vh!important;
+}
+
+.modal-body {
+    height: 90%!important;
+}
+
+.modal-content,
+.custom-activity,
+.config-modal,
+.multi-view-wizard-wizard,
+.multi-view-wizard-views,
+.custom-activity-iframe-view,
+.customActivityIframe
+{
+    height: 100%!important;
+}
